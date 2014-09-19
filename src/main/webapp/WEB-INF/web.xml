@@ -16,6 +16,10 @@
         <servlet-name>ejer01peticionHTTP</servlet-name>
         <servlet-class>net.rafaelaznar.control.ejer01peticionHTTP</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>tablamultiplicar</servlet-name>
+        <servlet-class>net.rafaelaznar.control.tablamultiplicar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>calculadora</servlet-name>
         <url-pattern>/calculadora</url-pattern>
@@ -31,7 +35,11 @@
     <servlet-mapping>
         <servlet-name>ejer01peticionHTTP</servlet-name>
         <url-pattern>/ejer01peticionHTTP</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tablamultiplicar</servlet-name>
+        <url-pattern>/tablamultiplicar</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

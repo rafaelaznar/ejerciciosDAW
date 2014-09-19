@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario de construcción de la tabla de multiplicaciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Formulario de construcción de la tabla de multiplicaciones</h1>
+        <form name="procesatablamultiplicaciones" action="procesatablamultiplicaciones.jsp" method="GET">
+            <label for="ancho">Ancho: </label>
+            <input type="text" id="ancho" name="ancho" value="10" /><br />
+            <label for="alto">Alto: </label>
+            <input type="text"  id="alto" name="alto" value="10" /><br />
+            <input type="submit" id="enviar" value="Enviar" name="submit" /><br />
+        </form>
+        <div id="tabla"></div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#enviar").click(function () {
+                    alto=$("#alto").val();
+                    ancho=$("#ancho").val();
+                    $.ajax({
+                        url: "/ejerciciosDAW/tablamultiplicar?alto=" + alto + "&ancho=" + ancho,
+                        type: "GET",                      
+                        success: function (source) {                            
+                            //document.getElementById("tabla").innerHTML = source;
+                            $("#tabla").html(source);
+                        }
+                    });
+                    return false;
+                });
+
+            })
+        </script>
+    </body>
+</html>

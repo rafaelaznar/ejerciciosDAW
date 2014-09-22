@@ -24,22 +24,21 @@ and open the template in the editor.
             </select>
             <input type="submit" id="enviar" value="Enviar" name="submit" /><br />
         </form>
-        <div id="tabla"></div>
+        <div id="imagen"></div>
         <script type="text/javascript">
             $(document).ready(function() {
-                $("#enviar").click(function() {
-                    alto = $("#alto").val();
-                    ancho = $("#ancho").val();
+                
+                alert("jhsfkjfh" / "kjflskjd");
+                $("#enviar").click(function() {                   
                     $.ajax({
                         url: "/ejerciciosDAW/simpsonimagesserver?personaje=" + $("#simpsonCombo").val(),
                         type: "GET",
-                        success: function(source) {
-                            //document.getElementById("tabla").innerHTML = source;
+                        success: function(source) {                           
                             var img = $("<img />").attr('src', source).load(function() {
                                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                                     alert('broken image!');
                                 } else {
-                                    $("#tabla").html(img);
+                                    $("#imagen").html(img);
                                 }
                             });
                         }

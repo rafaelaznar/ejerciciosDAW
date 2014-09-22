@@ -35,19 +35,19 @@ public class simpsonImagesServer extends HttpServlet {
             String character = request.getParameter("personaje");
             switch (character) {
                 case "Homer":
-                    out.println("img/homer.png");
+                    out.print("img/homer.png");
                     break;
                 case "Marge":
-                    out.println("img/marge.png");
+                    out.print("img/marge.gif");
                     break;
                 case "bart":
-                    out.println("");
+                    out.print("");
                     break;
                 case "lisa":
-                    out.println("");
+                    out.print("");
                     break;
                 case "maggie":
-                    out.println("");
+                    out.print("");
                     break;
             }
 

@@ -34,7 +34,7 @@
         <a href="tablajaxasincrona.jsp">Ejercicio Tabla de multiplicar AJAX asíncrona rellenando divs</a><br />        
         <a href="formularioanchoaltotabla.html">Ejercicio Formulario que genera tabla de multiplicaciones para probar los métodos GET y POST</a><br />                
         <a href="formularioanchoaltotablaasincrona.html">Ejercicio Formulario que genera tabla de multiplicaciones sin recargar la página mediante petición AJAX asíncrona</a><br />                
-        <a href="formulariosimpson.html">Ejercicio Formulario que muestra una imagen sin recargar la página mediante petición AJAX asíncrona</a><br />                        
+        <a href="formularioimagenes.html">Ejercicio Formulario que muestra una imagen sin recargar la página mediante petición AJAX asíncrona</a><br />                        
         <a href="ejer01peticionHTTP?nombre=rafa&coches=toyota&coches=volvo&coches=seat&sinvalor=">Petición HTTP con parámetros</a><br />   
     </body>
 </html>

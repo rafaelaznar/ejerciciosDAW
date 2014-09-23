@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author raznara
  */
-public class simpsonImagesServer extends HttpServlet {
+public class ImagesServer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,28 +31,28 @@ public class simpsonImagesServer extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String character = request.getParameter("personaje");
-            switch (character) {
-                case "Homer":
-                    out.print("img/homer.png");
+            String img;
+            img = request.getParameter("imagen");
+            switch (img) {
+                case "Bicicleta":
+                    out.print("img/bici.png");
                     break;
-                case "Marge":
-                    out.print("img/marge.gif");
+                case "Cohete":
+                    out.print("img/cohete.png");
                     break;
-                case "bart":
-                    out.print("");
+                case "Guitarra":
+                    out.print("img/guitarra.png");
                     break;
-                case "lisa":
-                    out.print("");
+                case "Libro":
+                    out.print("img/libro.png");
                     break;
-                case "maggie":
-                    out.print("");
+                case "Pluma":
+                    out.print("img/pluma.png");
+                    break;
+                case "Tesoro":
+                    out.print("img/tesoro.png");
                     break;
             }
-
-         
-
         }
     }
 

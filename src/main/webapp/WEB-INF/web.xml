@@ -21,8 +21,8 @@
         <servlet-class>net.rafaelaznar.control.tablamultiplicar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>simpsonImagesServer</servlet-name>
-        <servlet-class>net.rafaelaznar.control.simpsonImagesServer</servlet-class>
+        <servlet-name>ImagesServer</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ImagesServer</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>calculadora</servlet-name>
@@ -45,8 +45,8 @@
         <url-pattern>/tablamultiplicar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>simpsonImagesServer</servlet-name>
-        <url-pattern>/simpsonimagesserver</url-pattern>
+        <servlet-name>ImagesServer</servlet-name>
+        <url-pattern>/imagesserver</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

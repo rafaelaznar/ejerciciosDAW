@@ -6,35 +6,34 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Formulario de construcción de la tabla de multiplicaciones</title>
+        <title>Muestra una imagen sin recargar la página</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body>
-        <h1>Formulario de construcción de la tabla de multiplicaciones</h1>
-        <form name="procesatablamultiplicaciones" action="procesatablamultiplicaciones.jsp" method="GET">
-            <label for="ancho">Personaje: </label>
-            <select id="simpsonCombo" name="simpsonCombo">
-                <option>Homer</option>
-                <option>Marge</option>
-                <option>Bart</option>
-                <option>Lisa</option>
-                <option>Maggie</option>
+        <h1>Muestra una imagen sin recargar la página</h1>
+        <form name="procesaimagen" action="#">
+            <label for="ancho">Dibujo: </label>
+            <select id="combo" name="combo">
+                <option>Bicicleta</option>
+                <option>Cohete</option>
+                <option>Guitarra</option>
+                <option>Libro</option>
+                <option>Pluma</option>
+                <option>Tesoro</option>
             </select>
             <input type="submit" id="enviar" value="Enviar" name="submit" /><br />
         </form>
         <div id="imagen"></div>
         <script type="text/javascript">
-            $(document).ready(function() {
-                
-                alert("jhsfkjfh" / "kjflskjd");
+            $(document).ready(function() {                               
                 $("#enviar").click(function() {                   
                     $.ajax({
-                        url: "/ejerciciosDAW/simpsonimagesserver?personaje=" + $("#simpsonCombo").val(),
+                        url: "/ejerciciosDAW/imagesserver?imagen=" + $("#combo").val(),
                         type: "GET",
                         success: function(source) {                           
-                            var img = $("<img />").attr('src', source).load(function() {
+                            var img = $('<img style="margin:auto; display:block;" / >').attr('src', source).load(function() {
                                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                                     alert('broken image!');
                                 } else {

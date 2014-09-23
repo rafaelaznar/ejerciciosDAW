@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            table {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size:12px;
+                text-align: left;
+            }
+            table tr {
+                padding: 5px;
+                font-size: 16px;
+                background-color: #83aec0;
+                background-image: url(fondo_th.png);
+                background-repeat: repeat-x;
+                color: #FFFFFF;
+                border-right-width: 1px;
+                border-bottom-width: 1px;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-right-color: #558FA6;
+                border-bottom-color: #558FA6;
+                font-family: “Trebuchet MS”, Arial;
+                text-transform: uppercase;
+            }
+            table tr td {
+                text-align: left;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                var contador = 0;
+                var suma = 0;
+                do {
+                    num = prompt("Introduce valor");
+                    if (num !== "fin" && num !== undefined && num !== null && num != "") {
+                        contador++;
+                        suma += parseInt(num);
+                        document.getElementById('media').innerHTML = "Media: " + (suma / contador).toFixed(2) + "<br>Suma: " + suma + "<br>Num. elementos: " + contador;
+                        alert("Media: " + (suma / contador).toFixed(2));
+                    }
+                } while (num !== "fin" && num !== undefined && num !== null && num != "")
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <h1>Calculo dinámico de la media</h1> 
+        <p id="media">&nbsp;</p>
+    </body>
+</html>

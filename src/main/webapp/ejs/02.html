@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+                <meta charset="UTF-8">
+        <style type="text/css">
+            h1 {
+                color:blue;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                var peso = prompt("Introduzca su peso en Kg");
+                var estatura = prompt("Introduzca su estatura en metros");
+                var imc = peso / Math.pow(estatura, 2);
+                var mensaje = "Su índice de masa corporal es: " + imc.toFixed(2) + "<br/>";
+                switch (true) {
+                    case imc < 17.5:
+                        mensaje += "Vd. es anoréxico/a<br/>";
+                            break;
+                        case imc < 20:
+                            mensaje += "Vd. está en el infrapeso<br/>";
+                            break;
+                        case imc < 20:
+                            mensaje += "Enhorabuena, vd. está dentro de la normalidad<br/>";
+                            break;
+                        case imc < 25:
+                            mensaje += "Vd. tiene sobrepeso<br/>";
+                            break;
+                        default:
+                            mensaje += "Vd. es una persona obesa<br/>";
+                    }
+                    document.getElementById('imc').innerHTML = mensaje;
+                }
+                window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <h1>Cálculo del IMC</h1>
+
+        <div id="imc"></div>
+    </body>
+</html>

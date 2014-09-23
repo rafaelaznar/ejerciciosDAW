@@ -36,5 +36,14 @@
         <a href="formularioanchoaltotablaasincrona.html">Ejercicio Formulario que genera tabla de multiplicaciones sin recargar la página mediante petición AJAX asíncrona</a><br />                
         <a href="formularioimagenes.html">Ejercicio Formulario que muestra una imagen sin recargar la página mediante petición AJAX asíncrona</a><br />                        
         <a href="ejer01peticionHTTP?nombre=rafa&coches=toyota&coches=volvo&coches=seat&sinvalor=">Petición HTTP con parámetros</a><br />   
+        <h2>Ejercicios resueltos de javascript.</h2>
+        <a href="ejs/01.html">Ejercicio 01: DNI</a><br />
+        <a href="ejs/02.html">Ejercicio 02: IMC</a><br />
+        <a href="ejs/03.html">Ejercicio 03: juego de adivinar un número</a><br />
+        <a href="ejs/04.html">Ejercicio 04: media</a><br />
+        <a href="ejs/05.html">Ejercicio 05: Conversor de moneda</a><br />
+        <a href="ejs/06.html">Ejercicio 06: par o impar</a><br />
+        <a href="ejs/07.html">Ejercicio 07: ordenar 3 números</a><br />
+        <a href="ejs/08.html">Ejercicio 08: validar y formatear fecha básicos</a><br />
     </body>
 </html>

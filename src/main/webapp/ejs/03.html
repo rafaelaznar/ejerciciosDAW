@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            table {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size:12px;
+                text-align: left;
+            }
+            table tr {
+                padding: 5px;
+                font-size: 16px;
+                background-color: #83aec0;
+                background-image: url(fondo_th.png);
+                background-repeat: repeat-x;
+                color: #FFFFFF;
+                border-right-width: 1px;
+                border-bottom-width: 1px;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-right-color: #558FA6;
+                border-bottom-color: #558FA6;
+                font-family: “Trebuchet MS”, Arial;
+                text-transform: uppercase;
+            }
+            table tr td {
+                text-align: left;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                var intentos = 0;
+                var incognita = getAleatorio(1, 100);
+                var intento = 0;
+                var tabla_intentos = "<table  cellspacing=\"0\" cellpadding=\"0\">";
+                while ((parseInt(incognita) !== parseInt(intento) || intentos === 0)) {
+                    intentos++;
+                    do {
+                        intento = prompt("Introduzca un numero del 1 al 100");  
+                        if (!intento) quit();
+                    } while (intento < 1 || intento > 100)
+                    if (intento < incognita) {
+                        tabla_intentos += "<tr><td>" + intentos + ".-- </td><td>" + "No has acertado, es mayor que " + intento + ".</td></tr>";
+                        alert("No has acertado, es mayor que " + intento);
+                    } else if (intento > incognita) {
+                        tabla_intentos += "<tr><td>" + intentos + ".-- </td><td>" + "No has acertado, es menor que " + intento + ".</td></tr>";
+                        alert("No has acertado, es menor que " + intento);
+                    } else {
+                        tabla_intentos += "<tr><td>" + intentos + ".-- </td><td>" + "Lo has acertado en " + intentos + " intentos! Era el número " + incognita + "</td></tr>";
+                    }
+                    document.getElementById('mensaje').innerHTML = tabla_intentos + "</table>"
+                }
+                function getAleatorio(minimo, maximo) {
+                    return parseInt(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+                }
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <h1>Juego de adivinar el número</h1> 
+        <div id="mensaje"></div>
+    </body>
+</html>

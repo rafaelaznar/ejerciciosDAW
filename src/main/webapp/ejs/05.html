@@ -9,16 +9,40 @@ and open the template in the editor.
         <title></title>
         <meta charset="UTF-8">
         <style type="text/css">
-
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
         </style>
         <script type="text/javascript">
             function inicio() {
-
+                Number.prototype.formatMoney = function(c, d, t) {
+                    var n = this,
+                            c = isNaN(c = Math.abs(c)) ? 2 : c,
+                            d = d == undefined ? "." : d,
+                            t = t == undefined ? "," : t,
+                            s = n < 0 ? "-" : "",
+                            i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+                            j = (j = i.length) > 3 ? j % 3 : 0;
+                    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+                };
+                //http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
+                var tasa = 166.386;
+                moneda = prompt("Introduce valor");
+                if (moneda !== undefined && moneda !== null && moneda != "") {
+                    document.getElementById('europeseta').innerHTML = moneda + " euros son " + (moneda * tasa).formatMoney(2, ',', '.') + " pesetas.";
+                    document.getElementById('pesetaeuro').innerHTML = moneda + " pesetas son " + (moneda / tasa).formatMoney(2, ',', '.') + " euros.";
+                } else
+                    document.getElementById('europeseta').innerHTML = "Valor introducirdo incorrecto."
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-
+        <h1>Conversor peseta-euro/euro-peseta</h1> 
+        <p id="europeseta">&nbsp;</p>
+        <p id="pesetaeuro">&nbsp;</p>
     </body>
 </html>

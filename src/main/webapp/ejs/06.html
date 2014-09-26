@@ -9,16 +9,31 @@ and open the template in the editor.
         <title></title>
         <meta charset="UTF-8">
         <style type="text/css">
-
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
         </style>
         <script type="text/javascript">
             function inicio() {
-
+                function isNumber(n) {
+                    return !isNaN(parseFloat(n)) && isFinite(n);
+                }
+                //http: //stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
+                num = prompt("Introduce valor");
+                if (num !== undefined && num !== null && num != "" && isNumber(num)) {
+                    paridad = num % 2 == 0 ? "par" : "impar";
+                    document.getElementById('parimpar').innerHTML = "El número introducido (" + num + ") es " + paridad;
+                } else
+                    document.getElementById('parimpar').innerHTML = "Valor introducirdo incorrecto."
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-
+        <h1>Par/impar</h1> 
+        <p id="parimpar">&nbsp;</p>
     </body>
 </html>

@@ -9,16 +9,110 @@ and open the template in the editor.
         <title></title>
         <meta charset="UTF-8">
         <style type="text/css">
-
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
         </style>
         <script type="text/javascript">
             function inicio() {
+                function isNumber(n) {
+                    return !isNaN(parseInt(n)) && isFinite(n);
+                }
 
+                function dameDia(fecha) {
+                    switch (fecha.getDay()) {
+                        case 0:
+                            return "Domingo";
+                            break;
+                        case 1:
+                            return "Lunes";
+                            break;
+                        case 2:
+                            return "Martes";
+                            break;
+                        case 3:
+                            return "Miércoles";
+                            break;
+                        case 4:
+                            return "Jueves";
+                            break;
+                        case 5:
+                            return "Viernes";
+                            break;
+                        case 6:
+                            return "Sábado";
+                            break;
+                    }
+                }
+
+                function dameMes(fecha) {
+                    switch (fecha.getMonth()) {
+                        case 0:
+                            return "Enero";
+                            break;
+                        case 1:
+                            return "Febrero";
+                            break;
+                        case 2:
+                            return "Marzo";
+                            break;
+                        case 3:
+                            return "Abril";
+                            break;
+                        case 4:
+                            return "Mayo";
+                            break;
+                        case 5:
+                            return "Junio";
+                            break;
+                        case 6:
+                            return "Julio";
+                            break;
+                        case 6:
+                            return "Agosto";
+                            break;
+                        case 6:
+                            return "Septiembre";
+                            break;
+                        case 6:
+                            return "Octubre";
+                            break;
+                        case 6:
+                            return "Noviembre";
+                            break;
+                        case 6:
+                            return "Diciembre";
+                            break;
+                    }
+                }
+                var resultado = "";
+                dia = parseInt(prompt("Introduce dia"));
+                mes = parseInt(prompt("Introduce mes"));
+                anyo = parseInt(prompt("Introduce año"));
+                if (isNumber(dia) && isNumber(mes) && isNumber(anyo)) {
+                    if ((dia >= 1 && dia <= 31) && (mes >= 1 && mes <= 12) && (anyo >= 1950 && anyo <= 2013)) {
+                        var f = new Date(anyo, mes - 1, dia);
+                        if (f) {
+                            resultado = dameDia(f) + ", " + dia + " de " + dameMes(f) + " de " + anyo + " es una fecha válida.";
+                        } else {
+                            resultado = dia + "/" + mes + "/" + anyo + " es una fecha no válida.";
+                        }
+                    } else {
+                        resultado = dia + "/" + mes + "/" + anyo + " es una fecha no válida.";
+                    }
+                } else {
+                    resultado = dia + "/" + mes + "/" + anyo + " es una fecha no válida.";
+                }
+                document.getElementById('validacion').innerHTML = resultado;
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-
+        <h1>Validar una fecha</h1> 
+        <p id="validacion">&nbsp;</p>
     </body>
 </html>

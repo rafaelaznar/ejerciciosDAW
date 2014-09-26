@@ -13,12 +13,43 @@ and open the template in the editor.
         </style>
         <script type="text/javascript">
             function inicio() {
+                (function init() {
+                    tablas = "";
+                    for (var i = 0; i <= 100; i++) {
+                        if ((i % 6) === 0) {
+                        }
+                        tablas += crearTablaMultiplicar(parseInt(i));
+                        if ((i % 6) === 5) {
+                        }
+                    }
+                    document.getElementById('tablas').innerHTML = tablas;
+                }());
 
+                function crearTablaMultiplicar(n) {
+                    tabla = '<div class="table .table-condensed">';
+                    tabla += "<table class = 'mitabla table table-striped table-bordered'>";
+                    for (var i = 0; i <= 10; i++) {
+                        tabla += "<tr><td>" + n + " x " + i + " = " + parseInt(n) * parseInt(i) + "</td></tr>";
+                    }
+                    tabla += "</table>"
+                    tabla += "</div>";
+                    return tabla;
+                }
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <h4>Ejercicio 10</h4>
+                <p>Tablas de multiplicar responsivas</p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="tablas"></div>
+            </div>
+        </div>
     </body>
 </html>

@@ -9,16 +9,49 @@ and open the template in the editor.
         <title></title>
         <meta charset="UTF-8">
         <style type="text/css">
-
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
         </style>
         <script type="text/javascript">
             function inicio() {
+                function isNumber(n) {
+                    return !isNaN(parseInt(n)) && isFinite(n);
+                }
 
+                var resultado = "";
+                var asc = "";
+                var desc = "";
+                var sumap = 0;
+                var sumai = 0;
+                var br = "<br />";
+                num1 = parseInt(prompt("Introduce primer número entero"));
+                num2 = parseInt(prompt("Introduce segundo número entero"));
+                if (isNumber(num1) && isNumber(num2)) {
+                    if (num1 <= num2) {
+                        for (i = num1; i <= num2; i++) {
+                            asc += i + " ";
+                            desc += (num2 - (i - num1)) + " ";
+                            if (i % 2 == 0)
+                                sumap += i;
+                            else
+                                sumai += i;
+                        }
+                        resultado = "creciente: " + asc + br + "decreciente: " + desc + br + "suma de pares: " + sumap + br + "suma de impares: " + sumai;
+                    } else
+                        resultado = "El primer número debe ser menor que el segundo.";
+                } else
+                    resultado = "Número incorrecto";
+                document.getElementById('rangos').innerHTML = resultado;
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-
+        <h1>Rangos</h1> 
+        <p id="rangos">&nbsp;</p>
     </body>
 </html>

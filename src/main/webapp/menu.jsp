@@ -45,5 +45,18 @@
         <a href="ejs/06.html">Ejercicio 06: par o impar</a><br />
         <a href="ejs/07.html">Ejercicio 07: ordenar 3 números</a><br />
         <a href="ejs/08.html">Ejercicio 08: validar y formatear fecha básicos</a><br />
+        <a href="ejs/09.html">Ejercicio 09: sumas en rangos</a><br />
+        <a href="ejs/10.html">Ejercicio 10: tablas de multiplicar responsivas</a><br />
+        <a href="ejs/11.html">Ejercicio 11: divisores</a><br />
+        <a href="ejs/12.html">Ejercicio 12: primos</a><br />
+        <a href="ejs/13.html">Ejercicio 13: factorial</a><br />
+        <a href="ejs/14.html">Ejercicio 14: estadísticas</a><br />
+        <a href="ejs/15.html">Ejercicio 15: palíndromos</a><br />
+        <a href="ejs/16.html">Ejercicio 16: sustituciones</a><br />
+        <a href="ejs/17.html">Ejercicio 17: números romanos</a><br />
+        <a href="ejs/18.html">Ejercicio 18: descuentos</a><br />
+        <a href="ejs/19.html">Ejercicio 19: trim</a><br />
+        <a href="ejs/20.html">Ejercicio 20: tabla de temperaturas</a><br />
+        <a href="ejs/21.html">Ejercicio 21: discursos</a><br />
     </body>
 </html>

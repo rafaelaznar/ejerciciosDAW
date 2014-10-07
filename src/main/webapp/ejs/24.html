@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
+        <style type="text/css">
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                var items = [
+                    '',
+                    'item1', ['item2', 'sub21', 'sub22'],
+                    ['item3', 'sub31', 'sub32', 'sub33'],
+                    ['item4', ['sub41', 'doblesub411', 'doblesub412', 'doblesub413'],
+                        'sub42'],
+                    ['item5', ['sub51', ['doblesub511', 'triplesub5111', 'triplesub5112'],
+                            'doblesub512', 'doblesub513'],
+                        'sub52']
+                ];
+
+                function isArray(a) {
+                    return Object.prototype.toString.apply(a) === '[object Array]';
+                }
+
+                function array2list(lista, orden) {
+                    var listOutput = "";
+                    if (orden)
+                        listOutput += '<ol>';
+                    else
+                        listOutput += '<ul>';
+                    for (var i = 1; i < lista.length; i++) {
+                        if (isArray(lista[i])) {
+                            listOutput += '<li>' + lista[i][0];
+                            listOutput += array2list(lista[i], orden);
+                            listOutput += '</li>';
+                        } else {
+                            listOutput += '<li>' + lista[i] + '</li>';
+                        }
+                    }
+                    if (orden)
+                        listOutput += '</ol>';
+                    else
+                        listOutput += '</ul>';
+                    return listOutput;
+                }
+                document.getElementById('array2list').innerHTML = array2list(items, true);
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>array2list</h1> 
+                    <p id="array2list">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

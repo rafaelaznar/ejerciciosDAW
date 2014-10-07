@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
+        <style type="text/css">
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
+            table {
+                border-collapse: collapse;
+                border: 1px solid #03476F;
+                font: normal 11px verdana, arial, helvetica, sans-serif;
+                color: #363636;
+                background: #92C428;
+            }
+            caption {
+                text-align: center;
+                font: bold 18px arial, helvetica, sans-serif;
+                background: transparent;
+                padding: 6px 4px 8px 0px;
+                color: #03476F;
+                text-transform: uppercase;
+            }
+            td, th {
+                border: 1px dotted #03476F;
+                padding: .4em;
+                color: #363636;
+            }
+            thead th, tfoot th {
+                font: bold 11px verdana, arial, helvetica, sans-serif;
+                border: 1px solid #03476F;
+                text-align: left;
+                background: #4591AD;
+                color: #FFFFFF;
+                padding-top: 3px;
+            }
+            tbody td a {
+                background: transparent;
+                text-decoration: none;
+                color: #363636;
+            }
+            tbody td a:hover {
+                background: #C2F64D;
+                color: #363636;
+            }
+            tbody th a {
+                font: normal 11px verdana, arial, helvetica, sans-serif;
+                background: transparent;
+                text-decoration: none;
+                font-weight: normal;
+                color: #363636;
+            }
+            tbody th a:hover {
+                background: transparent;
+                color: #363636;
+            }
+            tbody th, tbody td {
+                vertical-align: top;
+                text-align: left;
+            }
+            tfoot td {
+                border: 1px solid #03476F;
+                background: #4591AD;
+                padding-top: 3px;
+                color: #FFFFFF;
+            }
+            .odd {
+                background: #AEE239;
+            }
+            tbody tr:hover {
+                background: #FFD800;
+                border: 1px solid #03476F;
+                color: #FFFFFF;
+            }
+            tbody tr:hover th, tbody tr.odd:hover th {
+                background: #FFD800;
+                color: #FFFFFF;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                var a = new Array(4);
+                a[0] = [12, 10, 3, 12];
+                a[1] = [20, 'hola', 111, 23];
+                a[2] = [23, 44, 'mundo', 34];
+                a[3] = [23, 44, 'mundo', 'hola'];
+                a[4] = [23, 44, 'mundo', 34];
+                a[5] = ['mundo', 44, 55, 56];
+
+                function array2table(arr, str_id) {
+
+                    ohtml = "";
+
+                    ohtml += '<table summary="Submitted table designs" class="' + str_id + '">';
+                    ohtml += '<caption>Ejemplo</caption>';
+
+                    ohtml += "<thead>";
+                    for (i = 0; i < arr[0].length; i++) {
+                        ohtml += '<th scope="col">';
+                        ohtml += arr[0][i];
+                        ohtml += '</th>';
+                    }
+                    ohtml += "</thead>";
+
+
+                    ohtml += "<tfoot>";
+                    for (i = 0; i < arr[arr.length - 1].length; i++) {
+                        ohtml += '<th scope="col">';
+                        ohtml += arr[arr.length - 1][i];
+                        ohtml += '</th>';
+                    }
+                    ohtml += "</thead>"
+
+
+                    ohtml += "<tbody>";
+                    for (i = 1; i < arr.length - 1; i++) {
+                        for (j = 0; j < arr[i].length; j++) {
+                            if (j == 0) {
+                                if ((i % 2) == 0)
+                                    ohtml += '<tr class="odd">';
+                                else
+                                    ohtml += '<tr>';
+                                ohtml += '<th scope="row">';
+                            } else
+                                ohtml += '<td>';
+                            ohtml += arr[i][j];
+                            if (j == 0)
+                                ohtml += '</th>';
+                            else
+                                ohtml += "</td>";
+                        }
+                        ohtml += "</tr>";
+                    }
+                    ohtml += "</table>";
+                    return ohtml;
+                }
+                document.getElementById('array2table').innerHTML = array2table(a, 'tabla1');
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>array2table</h1> 
+                    <p id="array2table">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

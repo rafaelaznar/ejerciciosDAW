@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
+        <style type="text/css">
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                function cuentaPalabras(texto) {
+                    texto = texto.replace(/(^\s*)|(\s*$)/gi, "");
+                    texto = texto.replace(/[ ]{2,}/gi, " ");
+                    texto = texto.replace(/\n /, "\n");
+                    return texto.split(' ').length;
+                }
+
+                texto = prompt("Introduce un texto");
+
+                mostrar = "Texto: " + texto + "<br />";
+                mostrar += "Caracteres: " + texto.length + "<br />";
+                if (texto.match(/\d+/g))
+                    mostrar += "Dígitos: " + texto.match(/\d+/g).length + "<br />";
+                else
+                    mostrar += "Dígitos: 0" + "<br />";
+                mostrar += "Palabras: " + cuentaPalabras(texto) + "<br />";
+                if (texto.match(/[a-z]/g))
+                    mostrar += "Minúsculas: " + texto.match(/[a-z]/g).length + "<br />";
+                else
+                    mostrar += "Minúsculas: 0" + "<br />";
+                if (texto.match(/[A-Z]/g))
+                    mostrar += "Mayúsculas: " + texto.match(/[A-Z]/g).length + "<br />";
+                else
+                    mostrar += "Mayúsculas: 0" + "<br />";
+                if (texto.match(/[-@!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g))
+                    mostrar += "Símbolos: " + texto.match(/[-@!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g).length + "<br />";
+                else
+                    mostrar += "Símbolos: 0" + "<br />";
+
+                document.getElementById('estadisticas').innerHTML = mostrar;
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>Estadísticas</h1>
+                    <p id="estadisticas">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

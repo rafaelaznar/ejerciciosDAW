@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
+        <style type="text/css">
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                function conversor_a_entero(numero_romano) {
+                    var numero_entero = 0;
+                    for (var i = 0; i < numero_romano.length; i++) {
+                        switch (numero_romano.charAt(i) + numero_romano.charAt(i + 1)) {
+                            case "CM":
+                                numero_entero += 900;
+                                i++;
+                                continue;
+                            case "CD":
+                                numero_entero += 400;
+                                i++;
+                                continue;
+                            case "XC":
+                                numero_entero += 90;
+                                i++;
+                                continue;
+                            case "XL":
+                                numero_entero += 40;
+                                i++;
+                                continue;
+                            case "IX":
+                                numero_entero += 9;
+                                i++;
+                                continue;
+                            case "IV":
+                                numero_entero += 4;
+                                i++;
+                                continue;
+                        }
+                        switch (numero_romano.charAt(i)) {
+                            case "M":
+                                numero_entero += 1000;
+                                continue;
+                            case "D":
+                                numero_entero += 500;
+                                continue;
+                            case "C":
+                                numero_entero += 100;
+                                continue;
+                            case "L":
+                                numero_entero += 50;
+                                continue;
+                            case "X":
+                                numero_entero += 10;
+                                continue;
+                            case "V":
+                                numero_entero += 5;
+                                continue;
+                            case "I":
+                                numero_entero += 1;
+                                continue;
+                        }
+                    }
+
+                    return numero_entero;
+                }
+
+                function conversor_a_romano(numero_entero) {
+                    function millar(numero_entero) {
+                        if (numero_entero > 1000) {
+                            return "M" + m(numero_entero - 1000)
+                        } else {
+                            return "";
+                        }
+                    }
+
+                    function centena(numero_entero) {
+                        ciento = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+                        return ciento[parseInt(numero_entero / 100)];
+                    }
+
+                    function decena(numero_entero) {
+                        decena = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+                        return decena[parseInt(numero_entero / 10)];
+                    }
+
+                    function unidad(numero_entero) {
+                        unidad = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+                        return unidad[parseInt(numero_entero)];
+                    }
+                    if (numero_entero < 9000) {
+                        return millar(numero_entero) + centena(numero_entero % 1000) + decena(numero_entero % 100) + unidad(numero_entero % 10);
+                    } else {
+                        return "Error en la conversión.";
+                    }
+                }
+
+                numero = prompt("Introduce un número entero o romano");
+                if (numero !== null) {
+                    numero = numero.toUpperCase();
+                    if (isNaN(numero)) {
+                        var ex = /^M{0,9}(C{0,3}|CM|CD|D(C){0,3})?(X{0,3}|XC|XL|L(X){0,3})?(I{0,3}|IX|IV|V(I){0,3})?$/;
+                        if (ex.test(numero)) {
+                            resultado = conversor_a_entero(numero);
+                        } else {
+                            resultado = "Error. Cadena no válida.";
+                        }
+                    } else {
+                        resultado = conversor_a_romano(numero);
+                    }
+
+                } else {
+                    resultado = "Error en la introducción del número";
+                }
+                document.getElementById('romanos').innerHTML = numero + ": " + resultado + "<br /> ";
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>Números romanos</h1> 
+                    <p id="romanos">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

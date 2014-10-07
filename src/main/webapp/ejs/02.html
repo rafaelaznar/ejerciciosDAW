@@ -7,7 +7,10 @@ and open the template in the editor.
 <html>
     <head>
         <title></title>
-                <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
         <style type="text/css">
             h1 {
                 color:blue;
@@ -22,22 +25,22 @@ and open the template in the editor.
                 switch (true) {
                     case imc < 17.5:
                         mensaje += "Vd. es anoréxico/a<br/>";
-                            break;
-                        case imc < 20:
-                            mensaje += "Vd. está en el infrapeso<br/>";
-                            break;
-                        case imc < 20:
-                            mensaje += "Enhorabuena, vd. está dentro de la normalidad<br/>";
-                            break;
-                        case imc < 25:
-                            mensaje += "Vd. tiene sobrepeso<br/>";
-                            break;
-                        default:
-                            mensaje += "Vd. es una persona obesa<br/>";
-                    }
-                    document.getElementById('imc').innerHTML = mensaje;
+                        break;
+                    case imc < 20:
+                        mensaje += "Vd. está en el infrapeso<br/>";
+                        break;
+                    case imc < 20:
+                        mensaje += "Enhorabuena, vd. está dentro de la normalidad<br/>";
+                        break;
+                    case imc < 25:
+                        mensaje += "Vd. tiene sobrepeso<br/>";
+                        break;
+                    default:
+                        mensaje += "Vd. es una persona obesa<br/>";
                 }
-                window.onload = inicio;
+                document.getElementById('imc').innerHTML = mensaje;
+            }
+            window.onload = inicio;
         </script>
     </head>
     <body>

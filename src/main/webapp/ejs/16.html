@@ -21,22 +21,23 @@ and open the template in the editor.
         </style>
         <script type="text/javascript">
             function inicio() {
-                function isNumber(n) {
-                    return !isNaN(parseFloat(n)) && isFinite(n);
-                }
-                //http: //stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
-                num = prompt("Introduce valor");
-                if (num !== undefined && num !== null && num != "" && isNumber(num)) {
-                    paridad = num % 2 == 0 ? "par" : "impar";
-                    document.getElementById('parimpar').innerHTML = "El número introducido (" + num + ") es " + paridad;
-                } else
-                    document.getElementById('parimpar').innerHTML = "Valor introducirdo incorrecto."
+                principal = prompt("Introduzca el texto principal");
+                buscar = prompt("Introduzca el texto a buscar");
+                reemplazar = prompt("Introduzca el texto a reemplazar");
+                resultado = principal.replace(buscar, reemplazar);
+                document.getElementById('reemplazos').innerHTML = 'Cadena principal: ' + principal + '<br />Texto a buscar: ' + buscar + '<br />Texto a reemplazar: ' + reemplazar + '<br />Resultado: ' + resultado;
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-        <h1>Par/impar</h1> 
-        <p id="parimpar">&nbsp;</p>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>Reemplazos</h1> 
+                    <p id="reemplazos">&nbsp;</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

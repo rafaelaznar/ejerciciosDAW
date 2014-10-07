@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
+        <style type="text/css">
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                function invertir(cadena) {
+                    var resultado = "";
+                    for (var i = cadena.length; i >= 0; i--) {
+                        resultado += cadena.charAt(i);
+                    }
+                    return resultado;
+                }
+
+                function invertir_silaba(cadena) {
+                    var resultado = "";
+                    if (cadena.length % 2 == 0)
+                        final = cadena.length - 1;
+                    else
+                        final = cadena.length;
+                    for (var i = 0; i <= final; i += 2) {
+                        resultado = cadena.charAt(i) + cadena.charAt(i + 1) + resultado;
+                    }
+                    return resultado;
+                }
+
+                function invertir_palabra(cadena) {
+                    var resultado = "";
+                    palabras = cadena.split(" ");
+                    for (var i = palabras.length - 1; i >= 0; i--) {
+                        resultado += palabras[i] + " ";
+                    }
+                    return resultado;
+                }
+
+                cad = prompt("Introduce una cadena");
+                document.getElementById('pal').innerHTML = 'Cadena inicial: ' + cad + "<br />Invertida: " + invertir(cad) + "<br />Dos a dos: " + invertir_silaba(cad) + "<br />Por palabras: " + invertir_palabra(cad);
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>Palíndromos</h1> 
+                    <p id="pal">&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

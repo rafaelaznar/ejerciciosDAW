@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
+        <style type="text/css">
+            h1 {
+                font-size: 1.1em;
+                margin: 0em 0em 0.444em;
+                border-bottom-style: double;
+                border-bottom-width: 6px;
+            }
+            table {
+                font-family: verdana, arial, sans-serif;
+                font-size:11px;
+                color:#333333;
+                border-width: 1px;
+                border-color: #666666;
+                border-collapse: collapse;
+            }
+            table thead tr td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #dedede;
+            }
+            table td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #ffffff;
+            }
+        </style>
+        <script type="text/javascript">
+            function inicio() {
+                function getTabla(n1, n2) {
+                    var tab = document.getElementById('tabla').getElementsByTagName('tbody')[0];
+
+                    for (var i = n2; i >= n1; i--) {
+                        var row = document.createElement('tr');
+                        var td1 = document.createElement('td');
+                        td1.appendChild(document.createTextNode(i + 'ºC'));
+                        var td2 = document.createElement('td');
+                        var resultado = (i * (9 / 5)) + 32;
+                        if (resultado.toString().replace('.', ',').search(',') != -1) {
+                            resultado = resultado.toFixed(2);
+                        }
+                        td2.appendChild(document.createTextNode(resultado + 'ºF'));
+                        row.appendChild(td1);
+                        row.appendChild(td2);
+                        tab.appendChild(row);
+                    }
+                }
+                document.getElementById('temperaturas').innerHTML = getTabla(-100, 100);
+            }
+            window.onload = inicio;
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">                      
+                <div class="col-md-offset-3 col-md-6">
+                    <h1>Temperaturas</h1> 
+                    <table id="tabla">
+                        <thead>
+                            <tr>
+                                <td>Celsius</td>
+                                <td>Fahrenheid</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

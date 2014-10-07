@@ -8,17 +8,59 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
         <style type="text/css">
-
+            table {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size:12px;
+                text-align: right;
+                width: 600px;
+            }
+            table tr {
+                padding: 5px;
+                font-size: 16px;
+                background-color: #83aec0;
+                background-image: url(fondo_th.png);
+                background-repeat: repeat-x;
+                color: #FFFFFF;
+                border-right-width: 1px;
+                border-bottom-width: 1px;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-right-color: #558FA6;
+                border-bottom-color: #558FA6;
+                font-family: “Trebuchet MS”, Arial;
+                text-transform: uppercase;
+            }
+            table tr td {
+                text-align: center;
+            }
         </style>
         <script type="text/javascript">
             function inicio() {
+                var i, j, total;
+                var tabla = "<table>";
+                for (i = 1; i <= 10; i++) {
+                    tabla += "<tr>";
+                    for (j = 1; j <= 10; j++) {
+                        total = i * j;
+                        total = " " + total;
 
+                        total = "<td>" + total + "</td>";
+                        tabla += total;
+                    }
+                    tabla += "</tr>";
+                }
+                tabla += "</table>";
+                document.getElementById('contenido').innerHTML = tabla;
             }
             window.onload = inicio;
         </script>
     </head>
     <body>
-
+        <h1>Ejercicio 01: tabla de multiplicar</h1>
+        <div id="contenido"></div>
     </body>
 </html>

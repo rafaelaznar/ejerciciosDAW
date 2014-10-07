@@ -8,6 +8,9 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript"  src="./js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./js/bootstrap.min.js"></script> 
         <style type="text/css">
             table {
                 font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -43,8 +46,9 @@ and open the template in the editor.
                 while ((parseInt(incognita) !== parseInt(intento) || intentos === 0)) {
                     intentos++;
                     do {
-                        intento = prompt("Introduzca un numero del 1 al 100");  
-                        if (!intento) quit();
+                        intento = prompt("Introduzca un numero del 1 al 100");
+                        if (!intento)
+                            quit();
                     } while (intento < 1 || intento > 100)
                     if (intento < incognita) {
                         tabla_intentos += "<tr><td>" + intentos + ".-- </td><td>" + "No has acertado, es mayor que " + intento + ".</td></tr>";

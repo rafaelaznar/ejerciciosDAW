@@ -24,6 +24,58 @@
         <servlet-name>ImagesServer</servlet-name>
         <servlet-class>net.rafaelaznar.control.ImagesServer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ejer02loginform</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer02loginform</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>ejer03Calculadora</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer03Calculadora</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer04combosEncadenados</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer04combosEncadenados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer05contador</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer05contador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer06contadorSesion</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer06contadorSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer07login</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer07login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer08carrito</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer08carrito</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer09superContador</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer09superContador</servlet-class>
+        <init-param>
+            <param-name>fichero</param-name>
+            <param-value>contador.txt"</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>ejer10chat</servlet-name>
+        <servlet-class>net.rafaelaznar.control.ejer10chat</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ejer02loginform</servlet-name>
+        <url-pattern>/ejer02loginform</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer04combosEncadenados</servlet-name>
+        <url-pattern>/ejer04combosEncadenados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer03Calculadora</servlet-name>
+        <url-pattern>/ejer03Calculadora</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>calculadora</servlet-name>
         <url-pattern>/calculadora</url-pattern>
@@ -47,6 +99,30 @@
     <servlet-mapping>
         <servlet-name>ImagesServer</servlet-name>
         <url-pattern>/imagesserver</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer05contador</servlet-name>
+        <url-pattern>/ejer05contador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer06contadorSesion</servlet-name>
+        <url-pattern>/ejer06contadorSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer07login</servlet-name>
+        <url-pattern>/ejer07login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer08carrito</servlet-name>
+        <url-pattern>/ejer08carrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer09superContador</servlet-name>
+        <url-pattern>/ejer09superContador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejer10chat</servlet-name>
+        <url-pattern>/ejer10chat</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -25,8 +25,10 @@
         <title>Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+        <script type="text/javascript"  src="./../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./../js/bootstrap.min.js"></script> 
         <link rel="stylesheet" href="../css/main.css">
     </head>
     <body>

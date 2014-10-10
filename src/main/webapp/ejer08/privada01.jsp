@@ -25,8 +25,10 @@
         <title>Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+        <script type="text/javascript"  src="./../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"  src="./../js/bootstrap.min.js"></script> 
         <link rel="stylesheet" href="../css/main.css">
     </head>
     <body>
@@ -43,8 +45,8 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span4">
+            <div class="row">
+                <div class="col-md-12">
                     <%
                         HttpSession oSession = request.getSession();
 
@@ -63,14 +65,15 @@
 
                     %>
                 </div>
-                <div class="span4">
+                <div class="col-md-12">
                     <form  class="form-horizontal"  action="../ejer08carrito" method="post">
                         <h3>Formulario de compra</h3> 
                         <input type="hidden" name="do" value="buy">     
-                        <div class="control-group">
-                            <label class="control-label" for="producto">Producto:</label>
-                            <div class="controls">
-                                <%                                    String strCombo = "<select name=\"" + "producto" + "\">\n";
+                        <div class="form-group">
+                            <label class="col-sm-2  control-label" for="producto">Producto:</label>
+                            <div class="col-sm-2">
+
+                                <%                                    String strCombo = "<select class=\"form-control\" name=\"" + "producto" + "\">\n";
                                     strCombo += "<option value=\"\" ";
                                     strCombo += "selected";
                                     strCombo += " >Escoge un " + "producto" + "</option>\n";
@@ -84,23 +87,24 @@
                                     strCombo += "</select>";
                                     out.print(strCombo);
                                 %>
+
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label" for="inputCantidad">Cantidad:</label>
-                            <div class="controls">
-                                <input type="cantidad" id="inputCantidad" placeholder="Cantidad" name="cantidad">
+                        <div class="form-group">
+                            <label class="col-sm-2  control-label" for="inputCantidad">Cantidad:</label>
+                            <div class="col-sm-2">
+                                <input  type="text" class="form-control" id="inputCantidad" placeholder="Cantidad" name="cantidad">
                             </div>
                         </div>
-                        <div class="control-group">
-                            <div class="controls">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn">Comprar</button>
                             </div>
                         </div>
                     </form>
                 </div>
 
-                <div class="span4">
+                <div class="col-md-12">
                     <h3>Carrito de la compra</h3>
                     <%
                         out.println("<table class=\"table table-condensed\">");
@@ -114,13 +118,18 @@
                     %>
                 </div>
             </div>
-            <div class="row-fluid">
-                <div class="span12">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-6">
                     <p><a class="btn btn-large btn-primary" type="button" href="privada02.jsp">Pagar</a></p>
                     <p><a  class="btn btn-danger" href="../ejer08carrito?do=logout">Salir</a></p>
+
+                </div>   
+            </div>
+            <div class="row">
+                <div class="col-md-12">  
                     <hr/>
                     <footer><p>&copy; Rafael Aznar (2013)</p></footer>
-                </div>   
+                </div>
             </div>
         </div>
 
